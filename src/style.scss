@@ -142,12 +142,31 @@ body {
 
 // ===== Hero =====
 .hero {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 6rem 2rem;
-  min-height: 70vh;
+  max-width: none;
+  margin: 0;
+  padding: 6rem max(2rem, calc((100% - 1200px) / 2 + 2rem));
+  min-height: 80vh;
   display: flex;
   align-items: center;
+  background-color: var(--bg-page);
+  background-image: url('/images/graduation.jpg');
+  background-size: cover;
+  background-position: right 25%;
+  background-repeat: no-repeat;
+
+  .hero-text h1 { color: #fff; }
+  .hero-role { color: #a8d5e6; }
+  .hero-desc { color: #dbe4ea; }
+  .gradient-text {
+    background: linear-gradient(90deg, #a8d5e6, #7fb8cf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .btn-secondary {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.45);
+  }
 }
 
 .hero-text h1 {
@@ -446,4 +465,194 @@ body {
   .skills-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .hero-text h1 { font-size: 2.2rem; }
+}
+
+// ===== Education =====
+.education-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+  text-align: left;
+  margin-top: 3rem;
+
+  h3 { font-size: 1.3rem; margin-bottom: 0.25rem; }
+  p { color: var(--text-secondary); margin-bottom: 1rem; }
+}
+
+.diploma-figure {
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 340px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+
+    &:hover { transform: scale(1.02); }
+  }
+
+  figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+}
+
+// ===== Gallery =====
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  a {
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.3s ease;
+  }
+
+  a:hover img { transform: scale(1.05); }
+}
+
+// ===== Document links =====
+.doc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .education-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero {
+    min-height: 70vh;
+    background-image:
+      linear-gradient(rgba(10, 14, 18, 0.65), rgba(10, 14, 18, 0.65)),
+      url('/images/graduation.jpg');
+  }
+}
+
+// ===== Bolder upgrade =====
+body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; }
+.section-title { font-weight: 800; letter-spacing: -0.02em; }
+.hero-text h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; letter-spacing: -0.03em; }
+
+// Soft gradient glow behind the whole page
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(600px circle at 15% 10%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%),
+    radial-gradient(700px circle at 85% 60%, color-mix(in srgb, var(--accent-grey) 18%, transparent), transparent 60%);
+}
+
+// Moving gradient on highlighted words
+.gradient-text {
+  background-size: 200% auto;
+  animation: gradientShift 6s ease infinite;
+}
+
+// Glowing buttons
+.btn-primary {
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 35%, transparent);
+
+  &:hover { box-shadow: 0 12px 32px color-mix(in srgb, var(--accent) 55%, transparent); }
+}
+
+// Cards lift and glow on hover
+.info-card, .skill-card, .project-card, .contact-item {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 16px 40px color-mix(in srgb, var(--accent) 22%, transparent);
+  }
+}
+
+// Hero badge and stats
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 0.85rem;
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    animation: pulse 2s infinite;
+  }
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+  strong { display: block; font-size: 1.8rem; color: #fff; }
+  span { color: #a8d5e6; font-size: 0.85rem; }
+}
+
+// Hero text slides in one line at a time
+.hero-text > * { animation: fadeUp 0.8s ease backwards; }
+@for $i from 1 through 6 {
+  .hero-text > *:nth-child(#{$i}) { animation-delay: #{$i * 0.12}s; }
+}
+
+// Sections fade up as you scroll (classes are added by main.ts)
+.reveal:not(.visible) { opacity: 0; }
+.reveal.visible {
+  animation: fadeUp 0.7s ease backwards;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+
+@media (max-width: 768px) {
+  .hero-stats { gap: 1.5rem; }
+}
+
+// Respect people who turn animations off
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal:not(.visible) { opacity: 1; }
 }
