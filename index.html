@@ -6,37 +6,31 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Sbonelo Nhlebela's portfolio: full stack development, networking, embedded systems, and selected projects." />
-  <meta name="theme-color" content="#14171a" />
+    content="Sbonelo Nhlebela is a Computer Systems Engineering graduate from Pretoria, South Africa, focused on software development, ICT support, networking, and embedded systems." />
+  <meta name="theme-color" content="#0b1117" />
+  <title>Sbonelo Nhlebela — Portfolio</title>
   <meta property="og:title" content="Sbonelo Nhlebela — Portfolio" />
   <meta property="og:description"
-    content="Explore Sbonelo Nhlebela's work in software development, networking, and embedded systems." />
+    content="Computer Systems Engineering graduate focused on software development, ICT support, networking, and embedded systems." />
   <meta property="og:type" content="website" />
-  <title>Sbonelo Nhlebela — Portfolio</title>
+  <meta property="og:image" content="https://sbonelo-portfolio.netlify.app/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://sbonelo-portfolio.netlify.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet" />
 
-  <meta name="description"
-    content="Portfolio of Sbonelo Nhlebela, a Computer Systems Engineering graduate and developer based in Pretoria, South Africa." />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Sbonelo Nhlebela | Developer Portfolio" />
-  <meta property="og:description"
-    content="Computer Systems Engineering graduate with experience in Angular, TypeScript, networking and embedded systems." />
-  <meta property="og:image" content="https://sbonelo-portfolio.netlify.app/images/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://sbonelo-portfolio.netlify.app/" />
-  <meta name="twitter:card" content="summary_large_image" />
 </head>
 
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <nav class="navbar" aria-label="Primary navigation">
-      <a href="#home" class="logo">&lt;/&gt; Sbonelo Nhlebela</a>
+      <a href="#home" class="logo"><span class="logo-mark" aria-hidden="true">&lt;/&gt;</span> Sbonelo Nhlebela</a>
       <div class="nav-links" id="primary-navigation">
         <a href="#about">About</a>
         <a href="#education">Education</a>
@@ -50,7 +44,7 @@
         aria-label="Open navigation">
         <span></span><span></span><span></span>
       </button>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light theme">☀</button>
       <a href="#contact" class="btn btn-primary nav-cta">Let's Talk</a>
     </nav>
   </header>
@@ -58,25 +52,36 @@
   <main id="main-content" tabindex="-1">
     <!-- HERO -->
     <section id="home" class="hero">
-      <div class="hero-text">
-        <span class="status-pill"><span class="dot"></span>Open to graduate & internship opportunities</span>
-        <h1>Hi, I'm <span class="gradient-text">Sbonelo Nhlebela</span></h1>
-        <p class="hero-role">Computer Systems Engineering Graduate | Full Stack Development | ICT Support | Networking |
-          Electronics</p>
-        <p class="hero-desc">
-          Diploma graduate in Computer Systems Engineering (TUT, 2026) with 12 months of hands-on work experience in
-          full-stack development and ICT support. I build practical software solutions, responsive interfaces (Angular,
-          Bootstrap), and hardware/software integrations, with a foundation in networking, databases, and embedded
-          systems.
-        </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="/docs/Sbonelo_Nhlebela_CV.pdf" class="btn btn-secondary" download>Download CV</a>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <span class="status-pill"><span class="dot"></span>Open to graduate and internship opportunities</span>
+          <p class="hero-eyebrow">Computer Systems Engineering · Pretoria, South Africa</p>
+          <h1>Building useful things with <span class="gradient-text">code and curiosity.</span></h1>
+          <p class="hero-role">Hi, I'm Sbonelo Nhlebela — a 2026 graduate interested in software, ICT, and connected systems.</p>
+          <p class="hero-desc">
+            I bring hands-on experience in front-end development and ICT support, with a foundation in networking,
+            databases, and embedded systems. I enjoy turning practical problems into clear, reliable solutions.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">Explore my work <span aria-hidden="true">↗</span></a>
+            <a href="/docs/Sbonelo_Nhlebela_CV.pdf" class="btn btn-secondary" download>Download CV</a>
+          </div>
+          <div class="hero-facts" aria-label="Career highlights">
+            <div><strong>12 months</strong><span>Work-integrated learning</span></div>
+            <div><strong>2026</strong><span>Diploma graduate</span></div>
+            <div><strong>Software · ICT · Systems</strong><span>Areas of focus</span></div>
+          </div>
         </div>
-        <div class="hero-stats">
-          <div><strong data-count="12">12 </strong><span>Months of WIL</span></div>
-          <div><strong data-count="0">0 </strong><span>Industry Placements</span></div>
-          <div><strong>2026 </strong><span>Diploma Graduate</span></div>
+        <div class="hero-visual">
+          <div class="hero-photo-frame">
+            <img src="/images/graduation.jpg" alt="Sbonelo Nhlebela celebrating his graduation" fetchpriority="high" />
+          </div>
+          <div class="hero-photo-caption">
+            <span class="caption-mark" aria-hidden="true">✳</span>
+            <span><strong>Curious by nature.</strong><br />Engineer by training.</span>
+          </div>
+          <span class="hero-orbit hero-orbit-one" aria-hidden="true"></span>
+          <span class="hero-orbit hero-orbit-two" aria-hidden="true"></span>
         </div>
       </div>
     </section>
@@ -227,45 +232,47 @@
     <section id="projects" class="section">
       <p class="section-label">Projects</p>
       <h2 class="section-title">Things I've <span class="gradient-text">Built</span></h2>
+      <p class="section-subtitle">A mix of practical interface work, systems support, and small projects I’ve explored along the way.</p>
       <div class="projects-grid">
         <article class="project-card">
-          <span class="badge">Full Stack</span>
+          <div class="project-card-top"><span class="project-number">01</span><span class="badge">Interface work</span></div>
           <h3>Front-End Modernization &amp; UI Overhaul</h3>
           <p>
             Contributed to a front-end refresh focused on responsive layouts,
             navigation, and dark mode. Work included implementing interface
             changes, checking accessibility across screen sizes, and supporting QA.
           </p>
-          <p class="tech-stack">Angular · Bootstrap · HTML/CSS · Git</p>
+          <ul class="project-tags" aria-label="Technologies and focus areas">
+            <li>Angular</li><li>Bootstrap</li><li>Accessibility</li><li>Git</li>
+          </ul>
         </article>
         <article class="project-card">
-          <span class="badge">Systems</span>
+          <div class="project-card-top"><span class="project-number">02</span><span class="badge">ICT support</span></div>
           <h3>Digital Operations &amp; Workflow Support</h3>
           <p>
             Supported document management and order tracking workflows, helped
             set up virtual communication tools, and contributed to 3D logo design.
           </p>
-          <p class="tech-stack">Digital Workflows · Systems Support</p>
+          <ul class="project-tags" aria-label="Areas of work">
+            <li>Digital workflows</li><li>Systems support</li><li>3D design</li>
+          </ul>
         </article>
         <article class="project-card">
-          <span class="badge">Frontend</span>
+          <div class="project-card-top"><span class="project-number">03</span><span class="badge">Frontend</span></div>
           <h3>Form Table</h3>
           <p>A small project exploring dynamic form and table handling.</p>
-          <p class="tech-stack">
-            <a href="https://github.com/MockSbonelo/form-table" target="_blank">View on GitHub →</a>
-          </p>
+          <ul class="project-tags" aria-label="Technologies"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <a class="project-link" href="https://github.com/MockSbonelo/form-table" target="_blank"
+            rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a>
         </article>
         <article class="project-card">
-          <span class="badge">Frontend</span>
+          <div class="project-card-top"><span class="project-number">04</span><span class="badge">HTML</span></div>
           <h3>Forms Using HTML</h3>
           <p>A collection of HTML form implementations and layouts.</p>
-          <p class="tech-stack">
-            <a href="https://github.com/MockSbonelo/Forms-Using-HTML-" target="_blank">View on GitHub →</a>
-          </p>
+          <ul class="project-tags" aria-label="Technologies"><li>HTML</li><li>Forms</li><li>Responsive layout</li></ul>
+          <a class="project-link" href="https://github.com/MockSbonelo/Forms-Using-HTML-" target="_blank"
+            rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a>
         </article>
-      </div>
-      <div class="doc-links">
-        <a href="/docs/Sbonelo_Nhlebela_CV.pdf" class="btn btn-primary" download>Download CV</a>
       </div>
     </section>
 

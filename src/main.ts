@@ -3,22 +3,25 @@ import './style.scss'
 const root = document.documentElement
 const toggleBtn = document.querySelector<HTMLButtonElement>('#theme-toggle')!
 
-// Load saved preference, default to dark
+// Load the saved preference, defaulting to dark.
 const savedTheme = localStorage.getItem('theme') || 'dark'
 if (savedTheme === 'light') {
   root.setAttribute('data-theme', 'light')
-  toggleBtn.textContent = '☀️'
+  toggleBtn.textContent = '☾'
+  toggleBtn.setAttribute('aria-label', 'Switch to dark theme')
 }
 
 toggleBtn.addEventListener('click', () => {
   const isLight = root.getAttribute('data-theme') === 'light'
   if (isLight) {
     root.removeAttribute('data-theme')
-    toggleBtn.textContent = '🌙'
+    toggleBtn.textContent = '☼'
+    toggleBtn.setAttribute('aria-label', 'Switch to light theme')
     localStorage.setItem('theme', 'dark')
   } else {
     root.setAttribute('data-theme', 'light')
-    toggleBtn.textContent = '☀️'
+    toggleBtn.textContent = '☾'
+    toggleBtn.setAttribute('aria-label', 'Switch to dark theme')
     localStorage.setItem('theme', 'light')
   }
 })
@@ -183,16 +186,3 @@ if (gallery && galleryImage && galleryLink && galleryCount) {
     }
   })
 }
-
-// ----- Count up the numbers in the hero -----
-document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
-  const target = Number(el.dataset.count)
-  let current = 0
-  setTimeout(() => {
-    const timer = setInterval(() => {
-      current += 1
-      el.textContent = String(current)
-      if (current >= target) clearInterval(timer)
-    }, Math.round(1200 / target))
-  }, 600)
-})
